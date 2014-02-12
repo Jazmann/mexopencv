@@ -179,7 +179,7 @@ void mexFunction( int nlhs, mxArray *plhs[],
         if (nrhs == 2) {
             // return a struct with all parameters and their values
             vector<string> params;
-            obj->getParams(params);
+            // obj->getParams(params);
             MxArray s = MxArray::Struct();
             for(vector<string>::const_iterator p = params.begin(); p != params.end(); ++p) {
                 s.set(*p, get_param(obj,*p));
@@ -197,7 +197,7 @@ void mexFunction( int nlhs, mxArray *plhs[],
         if (nrhs == 2) {
             // return a list of all parameter names
             vector<string> params;
-            obj->getParams(params);
+           // obj->getParams(params);
             plhs[0] = MxArray(params);
         } else if (nrhs == 4 && rhs[2].isChar()) {
             // set parameter

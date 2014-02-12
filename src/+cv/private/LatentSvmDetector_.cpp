@@ -27,7 +27,7 @@ inline void nargchk(bool cond)
  */
 mxArray* ObjectDetection2Struct(
     const vector<LatentSvmDetector::ObjectDetection> vo,
-    const vector<string>& classNames)
+    const vector<cv::String>& classNames)
 {
     const char* fields[] = {"rect","score","class"};
     MxArray m(fields,3,1,vo.size());
@@ -54,7 +54,7 @@ void mexFunction( int nlhs, mxArray *plhs[],
     nargchk(nrhs>=2 && nlhs<=2);
     vector<MxArray> rhs(prhs,prhs+nrhs);
     int id = rhs[0].toInt();
-    string method(rhs[1].toString());
+    std::string method(rhs[1].toString());
     
     // Constructor call
     if (method == "new") {
@@ -82,8 +82,8 @@ void mexFunction( int nlhs, mxArray *plhs[],
     }
     else if (method == "load") {
         nargchk(nrhs<=4 && nlhs<=1);
-        plhs[0] = (nrhs==3) ? MxArray(obj.load(rhs[2].toVector<string>())) :
-            MxArray(obj.load(rhs[2].toVector<string>(), rhs[3].toVector<string>()));
+        plhs[0] = (nrhs==3) ? MxArray(obj.load(rhs[2].toVector<std::string>())) :
+            MxArray(obj.load(rhs[2].toVector<std::string>(), rhs[3].toVector<std::string>()));
     }
     else if (method == "detect") {
         nargchk(nrhs>=3 && (nrhs%2)==1 && nlhs<=1);
@@ -92,7 +92,7 @@ void mexFunction( int nlhs, mxArray *plhs[],
         float overlapThreshold=0.5f;
         int numThreads=-1;
         for (int i=3; i<nrhs; i+=2) {
-            string key(rhs[i].toString());
+            std::string key(rhs[i].toString());
             if (key=="OverlapThreshold")
                 overlapThreshold = rhs[i+1].toDouble();
             else if (key=="NumThreads")
