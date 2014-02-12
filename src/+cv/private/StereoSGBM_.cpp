@@ -13,7 +13,7 @@ using namespace cv;
 /// Last object id to allocate
 int last_id = 0;
 /// Object container
-map<int,StereoSGBM> obj_;
+map<int,Ptr<StereoSGBM>> obj_;
 
 /**
  * Main entry called from Matlab
@@ -34,7 +34,7 @@ void mexFunction( int nlhs, mxArray *plhs[],
     string method;
     if (nrhs==0) {
         // Constructor is called. Create a new object from argument
-        obj_[++last_id] = StereoSGBM();
+        obj_[++last_id] = createStereoSGBM(0,16,1);
         plhs[0] = MxArray(last_id);
         return;
     }
@@ -80,7 +80,7 @@ void mexFunction( int nlhs, mxArray *plhs[],
             else
                 mexErrMsgIdAndTxt("mexopencv:error","Unrecognized option");
         }
-        obj_[++last_id] = StereoSGBM(minDisparity, numDisparities,
+        obj_[++last_id] = createStereoSGBM(minDisparity, numDisparities,
             SADWindowSize, P1, P2, disp12MaxDiff, preFilterCap, uniquenessRatio,
             speckleWindowSize, speckleRange, fullDP);
         plhs[0] = MxArray(last_id);
@@ -94,7 +94,7 @@ void mexFunction( int nlhs, mxArray *plhs[],
         mexErrMsgIdAndTxt("mexopencv:error","Invalid arguments");
     
     // Big operation switch
-    StereoSGBM& obj = obj_[id];
+    Ptr<StereoSGBM> obj = obj_[id];
     if (method == "delete") {
         if (nrhs!=2 || nlhs!=0)
             mexErrMsgIdAndTxt("mexopencv:error","Output not assigned");
@@ -105,7 +105,7 @@ void mexFunction( int nlhs, mxArray *plhs[],
             mexErrMsgIdAndTxt("mexopencv:error","Wrong number of arguments");
         Mat left(rhs[2].toMat(CV_8U)), right(rhs[3].toMat(CV_8U));
         Mat disparity;
-        obj(left,right,disparity);
+        obj->compute(left,right,disparity);
         plhs[0] = MxArray(disparity);
     }
     else
