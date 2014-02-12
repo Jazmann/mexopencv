@@ -1,4 +1,4 @@
-MATLABDIR   ?= /Applications/MATLAB_R2012b.app/
+MATLABDIR   ?= /Applications/MATLAB_R2012a.app/
 MEX         ?= $(MATLABDIR)/bin/mex
 MV          ?= mv
 AR          ?= ar
