@@ -181,7 +181,7 @@ void mexFunction( int nlhs, mxArray *plhs[],
             vector<cv::String> params;
             obj->getParams(params);
             MxArray s = MxArray::Struct();
-            for(vector<string>::const_iterator p = params.begin(); p != params.end(); ++p) {
+            for(vector<cv::String>::const_iterator p = params.begin(); p != params.end(); ++p) {
                 s.set(*p, get_param(obj,*p));
             }
             plhs[0] = s;

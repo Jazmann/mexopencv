@@ -216,7 +216,7 @@ void mexFunction( int nlhs, mxArray *plhs[],
         if (nrhs!=2 || nlhs>1)
             mexErrMsgIdAndTxt("mexopencv:error","Wrong number of arguments");
         const CvMat* m = obj.get_var_importance();
-        plhs[0] = MxArray((m) ? Mat(m) : Mat());
+        plhs[0] = MxArray((m) ? cvarrToMat(m) : Mat());
     }
     else if (method == "get_proximity") {
         if (nrhs<4 || nlhs>1)
@@ -251,7 +251,7 @@ void mexFunction( int nlhs, mxArray *plhs[],
         if (nrhs!=2 || nlhs>1)
             mexErrMsgIdAndTxt("mexopencv:error","Wrong number of arguments");
         CvMat* m = obj.get_active_var_mask();
-        plhs[0] = MxArray((m) ? Mat(m) : Mat());
+        plhs[0] = MxArray((m) ? cvarrToMat(m) : Mat());
     }
     else if (method == "params") {
         if (nrhs!=2 || nlhs>1)
