@@ -180,7 +180,8 @@ void mexFunction( int nlhs, mxArray *plhs[],
         if (nrhs!=2 || nlhs>1)
             mexErrMsgIdAndTxt("mexopencv:error","Wrong number of arguments");
         const CvMat* m = obj.get_var_importance();
-        plhs[0] = MxArray((m) ? Mat(m) : Mat());
+        Mat mm = obj.getVarImportance();
+        plhs[0] = MxArray((m) ? mm : Mat());
     }
     else if (method == "get_pruned_tree_idx") {
         if (nrhs!=2 || nlhs>1)

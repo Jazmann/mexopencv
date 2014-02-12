@@ -46,9 +46,9 @@ void mexFunction( int nlhs, mxArray *plhs[],
         else
             mexErrMsgIdAndTxt("mexopencv:error","Unrecognized option");
     }
-    int flags = ((adaptiveThresh) ? CV_CALIB_CB_ADAPTIVE_THRESH : 0) |
-        ((normalizeImage) ? CV_CALIB_CB_NORMALIZE_IMAGE : 0) |
-        ((filterQuads) ? CV_CALIB_CB_FILTER_QUADS : 0) |
+    int flags = ((adaptiveThresh) ? CALIB_CB_ADAPTIVE_THRESH : 0) |
+        ((normalizeImage) ? CALIB_CB_NORMALIZE_IMAGE : 0) |
+        ((filterQuads) ? CALIB_CB_FILTER_QUADS : 0) |
         ((fastCheck) ? CALIB_CB_FAST_CHECK : 0);
     // Process
     vector<Point2f> corners;

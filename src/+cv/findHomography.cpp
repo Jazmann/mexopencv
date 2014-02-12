@@ -12,8 +12,8 @@ using namespace cv;
  */
 const ConstMap<std::string,int> Method = ConstMap<std::string,int>
     ("0",    0)
-    ("Ransac",    CV_RANSAC)
-    ("LMedS",    CV_LMEDS);
+    ("Ransac",    RANSAC)
+    ("LMedS",    LMEDS);
 
 /**
  * Main entry called from Matlab

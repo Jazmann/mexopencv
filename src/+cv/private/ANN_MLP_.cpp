@@ -201,16 +201,16 @@ void mexFunction( int nlhs, mxArray *plhs[],
         if (nrhs!=2 || nlhs>1)
             mexErrMsgIdAndTxt("mexopencv:error","Wrong number of arguments");
         const CvMat* ls = obj.get_layer_sizes();
-        plhs[0] = MxArray(Mat(ls));
+      //  plhs[0] = MxArray(Mat(ls));
     }
     else if (method == "get_weights") {
         if (nrhs!=3 || nlhs>1)
             mexErrMsgIdAndTxt("mexopencv:error","Wrong number of arguments");
         int layer = rhs[2].toInt();
-        const Mat ls(obj.get_layer_sizes());
+      //  const Mat ls(obj.get_layer_sizes());
         double* w = obj.get_weights(layer);
-        vector<double> wv(w,w+ls.at<int>(0,layer));
-        plhs[0] = MxArray(Mat(wv));
+      //  vector<double> wv(w,w+ls.at<int>(0,layer));
+      //  plhs[0] = MxArray(Mat(wv));
     }
     else
         mexErrMsgIdAndTxt("mexopencv:error","Unrecognized operation");

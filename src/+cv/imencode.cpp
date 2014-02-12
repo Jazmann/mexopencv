@@ -33,21 +33,21 @@ void mexFunction( int nlhs, mxArray *plhs[],
             int val = rhs[i+1].toInt();
             if (val < 0 || 100 < val)
                 mexErrMsgIdAndTxt("mexopencv:error","Invalid parameter");
-            params.push_back(CV_IMWRITE_JPEG_QUALITY);
+            params.push_back(IMWRITE_JPEG_QUALITY);
             params.push_back(val);
         }
         else if (key == "PngCompression") {
             int val = rhs[i+1].toInt();
             if (val < 0 || 9 < val)
                 mexErrMsgIdAndTxt("mexopencv:error","Invalid parameter");
-            params.push_back(CV_IMWRITE_PNG_COMPRESSION);
+            params.push_back(IMWRITE_PNG_COMPRESSION);
             params.push_back(val);
         }
         else if (key == "PxmBinary") {
             int val = rhs[i+1].toInt();
             if (val < 0 || 1 < val)
                 mexErrMsgIdAndTxt("mexopencv:error","Invalid parameter");
-            params.push_back(CV_IMWRITE_PXM_BINARY);
+            params.push_back(IMWRITE_PXM_BINARY);
             params.push_back(val);
         }
         else

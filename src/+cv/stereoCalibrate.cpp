@@ -152,20 +152,20 @@ void mexFunction( int nlhs, mxArray *plhs[],
         else
             mexErrMsgIdAndTxt("mexopencv:error","Unrecognized option");
     }
-    int flags = ((fixIntrinsic) ? CV_CALIB_FIX_INTRINSIC : 0) |
-        ((useIntrinsicGuess) ? CV_CALIB_USE_INTRINSIC_GUESS : 0) |
-        ((fixPrincipalPoint) ? CV_CALIB_FIX_PRINCIPAL_POINT : 0) |
-        ((fixFocalLength) ? CV_CALIB_FIX_FOCAL_LENGTH : 0) |
-        ((fixAspectRatio) ? CV_CALIB_FIX_ASPECT_RATIO : 0) |
-        ((sameFocalLength) ? CV_CALIB_SAME_FOCAL_LENGTH : 0) |
-        ((zeroTangentDist) ? CV_CALIB_ZERO_TANGENT_DIST : 0) |
-        ((fixK1) ? CV_CALIB_FIX_K1 : 0) |
-        ((fixK2) ? CV_CALIB_FIX_K2 : 0) |
-        ((fixK3) ? CV_CALIB_FIX_K3 : 0) |
-        ((fixK4) ? CV_CALIB_FIX_K4 : 0) |
-        ((fixK5) ? CV_CALIB_FIX_K5 : 0) |
-        ((fixK6) ? CV_CALIB_FIX_K6 : 0) |
-        ((calibRationalModel) ? CV_CALIB_RATIONAL_MODEL : 0);
+    int flags = ((fixIntrinsic) ? CALIB_FIX_INTRINSIC : 0) |
+        ((useIntrinsicGuess) ? CALIB_USE_INTRINSIC_GUESS : 0) |
+        ((fixPrincipalPoint) ? CALIB_FIX_PRINCIPAL_POINT : 0) |
+        ((fixFocalLength) ? CALIB_FIX_FOCAL_LENGTH : 0) |
+        ((fixAspectRatio) ? CALIB_FIX_ASPECT_RATIO : 0) |
+        ((sameFocalLength) ? CALIB_SAME_FOCAL_LENGTH : 0) |
+        ((zeroTangentDist) ? CALIB_ZERO_TANGENT_DIST : 0) |
+        ((fixK1) ? CALIB_FIX_K1 : 0) |
+        ((fixK2) ? CALIB_FIX_K2 : 0) |
+        ((fixK3) ? CALIB_FIX_K3 : 0) |
+        ((fixK4) ? CALIB_FIX_K4 : 0) |
+        ((fixK5) ? CALIB_FIX_K5 : 0) |
+        ((fixK6) ? CALIB_FIX_K6 : 0) |
+        ((calibRationalModel) ? CALIB_RATIONAL_MODEL : 0);
     
     // Process
     Mat R, T, E, F;

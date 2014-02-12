@@ -31,14 +31,14 @@ void nargchk(bool cond)
 
 /// Create a new index parameters
 Ptr<flann::IndexParams> createIndexParams(const MxArray& m)
-{
-    Ptr<flann::IndexParams> p(NULL);
+{   
+     Ptr<flann::IndexParams> p ;
     vector<MxArray> rhs(m.toVector<MxArray>());
     if (rhs.empty() || (rhs.size()%2)==0)
         mexErrMsgIdAndTxt("mexopencv:error","Invalid argument");
     string type(rhs[0].toString());
     if (type == "Linear")
-        p = new flann::LinearIndexParams();
+         p = Ptr<flann::IndexParams>(new flann::LinearIndexParams());
     else if (type == "KDTree") {
         int trees = 4;
         for (int i=1; i<rhs.size(); i+=2) {
@@ -48,7 +48,7 @@ Ptr<flann::IndexParams> createIndexParams(const MxArray& m)
             else
                 mexErrMsgIdAndTxt("mexopencv:error","Unrecognized option");
         }
-        p = new flann::KDTreeIndexParams(trees);
+        p = Ptr<flann::IndexParams>(new flann::KDTreeIndexParams(trees));
     }
     else if (type == "KMeans") {
         int branching = 32;
@@ -68,8 +68,8 @@ Ptr<flann::IndexParams> createIndexParams(const MxArray& m)
             else
                 mexErrMsgIdAndTxt("mexopencv:error","Unrecognized option");
         }
-        p = new flann::KMeansIndexParams(
-            branching, iterations, centers_init, cb_index);
+        p = Ptr<flann::IndexParams>(new flann::KMeansIndexParams(
+            branching, iterations, centers_init, cb_index));
     }
     else if (type == "Composite") {
         int trees = 4;
@@ -92,8 +92,8 @@ Ptr<flann::IndexParams> createIndexParams(const MxArray& m)
             else
                 mexErrMsgIdAndTxt("mexopencv:error","Unrecognized option");
         }
-        p = new flann::CompositeIndexParams(trees,
-            branching, iterations, centers_init, cb_index);
+        p = Ptr<flann::IndexParams>(new flann::CompositeIndexParams(trees,
+            branching, iterations, centers_init, cb_index));
     }
     else if (type == "LSH") {
         unsigned int table_number = 20;
@@ -110,7 +110,7 @@ Ptr<flann::IndexParams> createIndexParams(const MxArray& m)
             else
                 mexErrMsgIdAndTxt("mexopencv:error","Unrecognized option");
         }
-        p = new flann::LshIndexParams(table_number, key_size, multi_probe_level);
+        p = Ptr<flann::IndexParams>(new flann::LshIndexParams(table_number, key_size, multi_probe_level));
     }
     else if (type == "Autotuned") {
         float target_precision = 0.9;
@@ -130,14 +130,14 @@ Ptr<flann::IndexParams> createIndexParams(const MxArray& m)
             else
                 mexErrMsgIdAndTxt("mexopencv:error","Unrecognized option");
         }
-        p = new flann::AutotunedIndexParams(target_precision,
-            build_weight, memory_weight, sample_fraction);
+        p = Ptr<flann::IndexParams>(new flann::AutotunedIndexParams(target_precision,
+            build_weight, memory_weight, sample_fraction));
     }
     else if (type == "Saved") {
         if (rhs.size()!=2)
             mexErrMsgIdAndTxt("mexopencv:error","Missing filename");
         string filename(rhs[1].toString());
-        p = new flann::SavedIndexParams(filename);
+        p = Ptr<flann::IndexParams>(new flann::SavedIndexParams(filename));
         if (p.empty())
             mexErrMsgIdAndTxt("mexopencv:error","Failed to load index");
     }
@@ -171,8 +171,8 @@ Ptr<flann::SearchParams> createSearchParams(const MxArray& m)
 /// Create a new FlannBasedMatcher
 Ptr<DescriptorMatcher> createFlannBasedMatcher(const vector<MxArray>& rhs)
 {
-    Ptr<flann::IndexParams> indexParams(NULL);
-    Ptr<flann::SearchParams> searchParams(NULL);
+    Ptr<flann::IndexParams> indexParams;
+    Ptr<flann::SearchParams> searchParams;
     for (int i=0; i<rhs.size(); i+=2) {
         string key(rhs[i].toString());
         if (key == "Index")
@@ -183,9 +183,9 @@ Ptr<DescriptorMatcher> createFlannBasedMatcher(const vector<MxArray>& rhs)
             mexErrMsgIdAndTxt("mexopencv:error","Unrecognized option");
     }
     if (indexParams.empty())
-        indexParams = new flann::KDTreeIndexParams();
+        indexParams = Ptr<flann::IndexParams>(new flann::KDTreeIndexParams());
     if (searchParams.empty())
-        searchParams = new flann::SearchParams();
+        searchParams = Ptr<flann::SearchParams>(new flann::SearchParams());
     return Ptr<DescriptorMatcher>(new FlannBasedMatcher(indexParams,searchParams));
 }
 

@@ -11,10 +11,10 @@ using namespace cv;
 /** Method for option processing
  */
 const ConstMap<std::string,int> FMMethod = ConstMap<std::string,int>
-    ("7Point",    CV_FM_7POINT)
-    ("8Point",    CV_FM_8POINT)
-    ("Ransac",    CV_FM_RANSAC)
-    ("LMedS",    CV_FM_LMEDS);
+    ("7Point",    FM_7POINT)
+    ("8Point",    FM_8POINT)
+    ("Ransac",    FM_RANSAC)
+    ("LMedS",    FM_LMEDS);
 
 /**
  * Main entry called from Matlab
