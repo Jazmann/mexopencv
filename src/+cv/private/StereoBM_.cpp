@@ -20,7 +20,7 @@ const ConstMap<std::string,int> Preset = ConstMap<std::string,int>
 /// Last object id to allocate
 int last_id = 0;
 /// Object container
-map<int,StereoBM> obj_;
+map<int,Ptr<StereoBM>> obj_;
 
 /**
  * Main entry called from Matlab
@@ -41,7 +41,7 @@ void mexFunction( int nlhs, mxArray *plhs[],
     string method;
     if (nrhs==0) {
         // Constructor is called. Create a new object from argument
-        obj_[++last_id] = StereoBM();
+        obj_[++last_id] = createStereoBM();
         plhs[0] = MxArray(last_id);
         return;
     }
@@ -53,7 +53,7 @@ void mexFunction( int nlhs, mxArray *plhs[],
         mexErrMsgIdAndTxt("mexopencv:error","Invalid arguments");
     
     // Big operation switch
-    StereoBM& obj = obj_[id];
+    Ptr<StereoBM> obj = obj_[id];
     if (method == "delete") {
         if (nrhs!=2 || nlhs!=0)
             mexErrMsgIdAndTxt("mexopencv:error","Output not assigned");
@@ -62,7 +62,7 @@ void mexFunction( int nlhs, mxArray *plhs[],
     else if (method == "init") {
         if ((nrhs%2)!=0 || nlhs!=0)
             mexErrMsgIdAndTxt("mexopencv:error","Wrong number of arguments");
-        int preset=StereoBM::BASIC_PRESET;
+        int preset=0;
         int ndisparities=0;
         int SADWindowSize=21;
         for (int i=2; i<nrhs; i+=2) {
@@ -76,7 +76,7 @@ void mexFunction( int nlhs, mxArray *plhs[],
             else
                 mexErrMsgIdAndTxt("mexopencv:error","Unrecognized option");
         }
-        obj.init(preset, ndisparities, SADWindowSize);
+        obj = createStereoBM(preset, SADWindowSize);
     }
     else if (method == "compute") {
         if (nrhs<4 || (nrhs%2)!=0 || nlhs>1)
@@ -91,7 +91,7 @@ void mexFunction( int nlhs, mxArray *plhs[],
             else
                 mexErrMsgIdAndTxt("mexopencv:error","Unrecognized option");
         }
-        obj(left,right,disparity,disptype);
+        obj->compute(left,right,disparity);
         plhs[0] = MxArray(disparity);
     }
     else
