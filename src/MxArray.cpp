@@ -324,6 +324,16 @@ std::string MxArray::toString() const
     return s;
 }
 
+cv::String MxArray::toCvString() const
+{
+    if (!isChar())
+        mexErrMsgIdAndTxt("mexopencv:error", "MxArray not of type char");
+    char *pc = mxArrayToString(p_);
+    cv::String s(pc);
+    mxFree(pc);
+    return s;
+}
+
 cv::Mat MxArray::toMat(int depth, bool transpose) const
 {
     // Create cv::Mat object.
@@ -538,6 +548,13 @@ std::vector<std::string> MxArray::toVector() const
 {
     return toVector(
         std::const_mem_fun_ref_t<std::string,MxArray>(&MxArray::toString));
+}
+
+template <>
+std::vector<cv::String> MxArray::toVector() const
+{
+    return toVector(
+        std::const_mem_fun_ref_t<cv::String,MxArray>(&MxArray::toCvString));
 }
 
 template <>

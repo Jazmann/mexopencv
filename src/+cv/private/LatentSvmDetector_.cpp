@@ -82,8 +82,8 @@ void mexFunction( int nlhs, mxArray *plhs[],
     }
     else if (method == "load") {
         nargchk(nrhs<=4 && nlhs<=1);
-        plhs[0] = (nrhs==3) ? MxArray(obj.load(rhs[2].toVector<std::string>())) :
-            MxArray(obj.load(rhs[2].toVector<std::string>(), rhs[3].toVector<std::string>()));
+        plhs[0] = (nrhs==3) ? MxArray(obj.load(rhs[2].toVector<cv::String>())) :
+            MxArray(obj.load(rhs[2].toVector<cv::String>(), rhs[3].toVector<cv::String>()));
     }
     else if (method == "detect") {
         nargchk(nrhs>=3 && (nrhs%2)==1 && nlhs<=1);

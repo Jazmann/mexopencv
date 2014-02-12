@@ -209,6 +209,9 @@ class MxArray
      * @return std::string value.
      */
     std::string toString() const;
+    
+    cv::String toCvString() const;
+    
     /** Convert MxArray to cv::Mat.
      * @param depth depth of cv::Mat. e.g., CV_8U, CV_32F.  When CV_USERTYPE1
      *                is specified, depth will be automatically determined from
@@ -930,6 +933,7 @@ template <> std::vector<MxArray> MxArray::toVector() const;
  * @endcode
  */
 template <> std::vector<std::string> MxArray::toVector() const;
+template <> std::vector<cv::String> MxArray::toVector() const;
 
 /** Convert MxArray to std::vector<cv::Mat>.
  * @return std::vector<cv::Mat> value.
