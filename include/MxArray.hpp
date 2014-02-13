@@ -727,6 +727,7 @@ cv::Scalar_<T> MxArray::toScalar_() const
         case 3: return cv::Scalar_<T>(at<T>(0), at<T>(1), at<T>(2));
         case 4: return cv::Scalar_<T>(at<T>(0), at<T>(1), at<T>(2), at<T>(3));
     }
+    return cv::Scalar_<T>(at<T>(0));
 }
 
 template <typename T>
