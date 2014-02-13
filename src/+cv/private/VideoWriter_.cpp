@@ -18,6 +18,8 @@ map<int,VideoWriter> obj_;
 // Local scope
 namespace {
 /// Option argument parser for constructor and open()
+    
+#define CV_FOURCC(c1, c2, c3, c4) (((c1) & 255) + (((c2) & 255) << 8) + (((c3) & 255) << 16) + (((c4) & 255) << 24))
 class open_options {
 public:
     int fourcc;
