@@ -1,0 +1,734 @@
+/Applications/MATLAB_R2012b.app//bin/matlab -nodisplay -r "addpath(pwd);cd test;try,UnitTest;catch e,disp(e.getReport);end;exit;"
+[?1h=
+                                                                               < M A T L A B (R) >
+                                                                     Copyright 1984-2012 The MathWorks, Inc.
+                                                                       R2012b (8.0.0.783) 64-bit (maci64)
+                                                                                 August 22, 2012
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+== TestANN_MLP ======
+-- test_1 ------
+PASS
+== TestAdaptiveThreshold ======
+-- test_1 ------
+PASS
+-- test_2 ------
+PASS
+-- test_3 ------
+PASS
+-- test_4 ------
+PASS
+-- test_5 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestApproxPolyDP ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestArcLength ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestBOWKMeansTrainer ======
+-- test_1 ------
+PASS
+-- test_2 ------
+PASS
+== TestBackgroundSubtractorMOG ======
+-- test_1 ------
+PASS
+== TestBackgroundSubtractorMOG2 ======
+-- test_1 ------
+PASS
+== TestBilateralFilter ======
+-- test_1 ------
+PASS
+-- test_2 ------
+PASS
+-- test_error_1 ------
+PASS
+-- test_error_2 ------
+PASS
+-- test_error_3 ------
+PASS
+== TestBlur ======
+-- test_1 ------
+PASS
+-- test_2 ------
+PASS
+-- test_3 ------
+PASS
+-- test_4 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestBoost ======
+-- test_1 ------
+PASS
+== TestBoundingRect ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestBuildPyramid ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestCalcBackProject ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestCalcHist ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestCalcOpticalFlowPyrLK ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestCalibrateCamera ======
+-- test_error_1 ------
+PASS
+== TestCalibrationMatrixValues ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestCanny ======
+-- test_1 ------
+PASS
+-- test_2 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestCascadeClassifier ======
+-- test_1 ------
+PASS
+== TestCircle ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestClipLine ======
+-- test_1 ------
+PASS
+-- test_2 ------
+PASS
+-- test_3 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestCompareHist ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestComposeRT ======
+-- test_error_1 ------
+PASS
+== TestComputeCorrespondEpilines ======
+-- test_error_1 ------
+PASS
+== TestContourArea ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestConvexHull ======
+-- test_1 ------
+PASS
+-- test_2 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestCornerEigenValsAndVecs ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestCornerHarris ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestCornerMinEigenVal ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestCornerSubPix ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestCvtColor ======
+-- test_1 ------
+PASS
+-- test_2 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestDTree ======
+-- test_1 ------
+PASS
+== TestDecomposeProjectionMatrix ======
+-- test_error_1 ------
+PASS
+== TestDescriptorMatcher ======
+-- test_1 ------
+PASS
+-- test_2 ------
+PASS
+== TestDilate ======
+-- test_1 ------
+PASS
+-- test_3 ------
+PASS
+-- test_4 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestDistanceTransform ======
+-- test_1 ------
+PASS
+-- test_2 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestDrawChessboardCorners ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestDrawContours ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestEMD ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestERTrees ======
+-- test_1 ------
+PASS
+== TestEllipse ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestEllipse2Poly ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestEqualizeHist ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestErode ======
+-- test_1 ------
+PASS
+-- test_3 ------
+PASS
+-- test_4 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestEstimateAffine3D ======
+-- test_error_1 ------
+PASS
+== TestEstimateRigidTransform ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestFAST ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestFileStorage ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestFillConvexPoly ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestFillPoly ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestFilter2D ======
+-- test_1 ------
+PASS
+-- test_2 ------
+PASS
+-- test_3 ------
+PASS
+-- test_4 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestFilterSpeckles ======
+-- test_error_1 ------
+PASS
+== TestFindChessboardCorners ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestFindCirclesGrid ======
+-- test_error_1 ------
+PASS
+== TestFindContours ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestFindFundamentalMat ======
+-- test_error_1 ------
+PASS
+== TestFindHomography ======
+-- test_error_1 ------
+PASS
+== TestFitEllipse ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestFitLine ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestFloodFill ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestGBTrees ======
+-- test_1 ------
+PASS
+== TestGaussianBlur ======
+-- test_1 ------
+PASS
+-- test_2 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestGetAffineTransform ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestGetBuildInformation ======
+-- test_1 ------
+PASS
+-- test_error ------
+PASS
+== TestGetDerivKernels ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestGetGaussianKernel ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestGetOptimalNewCameraMatrix ======
+-- test_error_1 ------
+PASS
+== TestGetPerspectiveTransform ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestGetRectSubPix ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestGetRotationMatrix2D ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestGetStructuringElement ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestGetTextSize ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestGoodFeaturesToTrack ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestGrabCut ======
+-- test_1 ------
+PASS
+-- test_2 ------
+PASS
+-- test_error_1 ------
+PASS
+-- test_error_2 ------
+PASS
+-- test_error_3 ------
+PASS
+-- test_error_4 ------
+PASS
+-- test_error_5 ------
+PASS
+== TestGroupRectangles ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestHoughCircles ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestHoughLines ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestHoughLinesP ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestHuMoments ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestImdecode ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestImencode ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestImread ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+-- test_error_2 ------
+PASS
+== TestImwrite ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+-- test_error_2 ------
+PASS
+== TestInitCameraMatrix2D ======
+-- test_error_1 ------
+PASS
+== TestInitUndistortRectifyMap ======
+-- test_error_1 ------
+PASS
+== TestInpaint ======
+-- test_1 ------
+PASS
+-- test_2 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestIntegral ======
+-- test_1 ------
+PASS
+-- test_2 ------
+PASS
+-- test_3 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestInvert ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestInvertAffineTransform ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestIsContourConvex ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestKNearest ======
+-- test_1 ------
+PASS
+== TestKalmanFilter ======
+-- test_1 ------
+PASS
+== TestKmeans ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestLaplacian ======
+-- test_1 ------
+PASS
+-- test_2 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestLine ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestMSER ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestMatMulDeriv ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestMatchShapes ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestMatchTemplate ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestMedianBlur ======
+-- test_1 ------
+PASS
+-- test_2 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestMinAreaRect ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestMinEnclosingCircle ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestMoments ======
+-- test_1 ------
+PASS
+-- test_2 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestMorphologyEx ======
+-- test_1 ------
+PASS
+-- test_3 ------
+PASS
+-- test_4 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestNormalBayesClassifier ======
+-- test_1 ------
+PASS
+== TestORB ======
+-- test_1 ------
+PASS
+-- test_2 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestPCA ======
+-- test_1 ------
+PASS
+-- test_2 ------
+PASS
+== TestPointPolygonTest ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestPolylines ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestPreCornerDetect ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestProjectPoints ======
+-- test_error_1 ------
+PASS
+== TestPutText ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestPyrMeanShiftFiltering ======
+-- test_1 ------
+PASS
+-- test_2 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestRQDecomp3x3 ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestRTrees ======
+-- test_1 ------
+PASS
+-- test_2 ------
+PASS
+== TestRectangle ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestRemap ======
+-- test_1 ------
+PASS
+-- test_2 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestReprojectImageTo3D ======
+-- test_error_1 ------
+PASS
+== TestResize ======
+-- test_1 ------
+PASS
+-- test_2 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestRodrigues ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestSURF ======
+-- test_1 ------
+PASS
+-- test_2 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestSVD ======
+-- test_1 ------
+PASS
+-- test_2 ------
+PASS
+== TestScharr ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestSepFilter2D ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestSobel ======
+-- test_1 ------
+PASS
+-- test_2 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestSolvePnP ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestSolvePnPRansac ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestStarDetector ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestStereoBM ======
+-- test_1 ------
+PASS
+== TestStereoCalibrate ======
+-- test_error_1 ------
+PASS
+== TestStereoRectify ======
+-- test_error_1 ------
+PASS
+== TestStereoRectifyUncalibrated ======
+-- test_error_1 ------
+PASS
+== TestStereoSGBM ======
+-- test_1 ------
+PASS
+-- test_2 ------
+PASS
+== TestThreshold ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestUndistort ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestWarpAffine ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestWarpPerspective ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestWatershed ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+[?1l>

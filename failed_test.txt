@@ -1,0 +1,100 @@
+/Applications/MATLAB_R2012b.app//bin/matlab -nodisplay -r "addpath(pwd);cd test;try,UnitTest;catch e,disp(e.getReport);end;exit;"
+[?1h=
+                                                                               < M A T L A B (R) >
+                                                                     Copyright 1984-2012 The MathWorks, Inc.
+                                                                       R2012b (8.0.0.783) 64-bit (maci64)
+                                                                                 August 22, 2012
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+== TestBOWImgDescriptorExtractor ======
+-- test_1 ------
+Unexpected Standard exception from MEX file.
+What() is:/Users/jaspershemilt/Developer/openCV_Dev/3.0.0/opencv/modules/features2d/src/bagofwords.cpp:175: error: (-215) vocabulary.empty() != false in function compute
+
+..
+
+Error in cv.BOWImgDescriptorExtractor/compute (line 141)
+            [bow,idx,descs] = BOWImgDescriptorExtractor_(this.id, 'compute', im, keypoints);
+
+Error in TestBOWImgDescriptorExtractor.test_1 (line 20)
+            [bow,idx] = bowextractor.compute(im,kpts);
+
+Error in UnitTest.all (line 44)
+                    feval([class_name,'.',m{:}]);
+
+Error in UnitTest (line 18)
+                UnitTest.all(class_name);
+
+FAIL
+-- test_error_1 ------
+PASS
+== TestCalcOpticalFlowFarneback ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestConvertPointsFromHomogeneous ======
+-- test_1 ------
+PASS
+-- test_2 ------
+PASS
+-- test_3 ------
+PASS
+-- test_4 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestConvertPointsToHomogeneous ======
+-- test_1 ------
+PASS
+-- test_3 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestHOGDescriptor ======
+-- test_1 ------
+PASS
+-- test_2 ------
+PASS
+== TestLatentSvmDetector ======
+-- test_1 ------
+PASS
+== TestPerspectiveTransform ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestSIFT ======
+-- test_1 ------
+PASS
+-- test_2 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestSVM ======
+-- test_1 ------
+PASS
+-- test_2 ------
+PASS
+-- test_3 ------
+PASS
+-- test_4 ------
+PASS
+-- test_5 ------
+PASS
+-- test_6 ------
+PASS
+== TestTransform ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+== TestUndistortPoints ======
+-- test_1 ------
+PASS
+-- test_error_1 ------
+PASS
+[?1l>
