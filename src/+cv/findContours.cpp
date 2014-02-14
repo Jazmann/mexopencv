@@ -43,8 +43,8 @@ void mexFunction( int nlhs, mxArray *plhs[],
     Mat image(rhs[0].toMat(CV_8U));
     vector<vector<Point> > contours;
     vector<Vec4i> hierarchy;
-    int mode = CV_RETR_EXTERNAL;
-    int method = CV_CHAIN_APPROX_NONE;
+    int mode = cv::RETR_EXTERNAL;
+    int method = cv::CHAIN_APPROX_NONE;
     Point offset;
     for (int i=1; i<nrhs; i+=2) {
         string key = rhs[i].toString();

@@ -39,7 +39,7 @@ void mexFunction( int nlhs, mxArray *plhs[],
             dy = rhs[i+1].toInt();
         else if (key=="KSize") {
             if (rhs[i+1].isChar() && rhs[i+1].toString()=="Scharr")
-                ksize = CV_SCHARR;
+                ksize = -1;//CV_SCHARR;
             else
                 ksize = rhs[i+1].toInt();
         }

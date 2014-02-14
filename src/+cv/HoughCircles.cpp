@@ -26,7 +26,7 @@ void mexFunction( int nlhs, mxArray *plhs[],
     vector<MxArray> rhs(prhs,prhs+nrhs);
     Mat image(rhs[0].toMat(CV_8U));
     vector<Vec3f> circles;
-    int method=CV_HOUGH_GRADIENT;
+    int method=HOUGH_GRADIENT;
     double dp=1;
     double minDist=image.rows/8;
     double param1=100;

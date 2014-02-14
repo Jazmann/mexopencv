@@ -59,7 +59,7 @@ void mexFunction( int nlhs, mxArray *plhs[],
     Mat m(rhs[1].toMat(CV_8U));
     // OpenCV's default is BGR while Matlab's is RGB
     if (m.type()==CV_8UC3)
-        cvtColor(m,m,CV_RGB2BGR);
+        cvtColor(m,m,COLOR_RGB2BGR);
     vector<uchar> buf;
     if (!imencode(ext, m, buf, params))
         mexErrMsgIdAndTxt("mexopencv:error","Unrecognized option");

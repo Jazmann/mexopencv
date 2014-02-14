@@ -105,7 +105,7 @@ void mexFunction( int nlhs, mxArray *plhs[],
         Mat frame;
         if (obj.retrieve(frame)) {
             if (frame.type()==CV_8UC3)
-                cvtColor(frame,frame,CV_BGR2RGB);
+                cvtColor(frame,frame,COLOR_BGR2RGB);
             plhs[0] = MxArray(frame);
         }
         else
@@ -117,7 +117,7 @@ void mexFunction( int nlhs, mxArray *plhs[],
         Mat frame;
         if (obj.read(frame)) {
             if (frame.type()==CV_8UC3)
-                cvtColor(frame,frame,CV_BGR2RGB);
+                cvtColor(frame,frame,COLOR_BGR2RGB);
             plhs[0] = MxArray(frame);
         }
         else

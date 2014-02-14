@@ -26,18 +26,18 @@ void mexFunction( int nlhs, mxArray *plhs[],
     vector<MxArray> rhs(prhs,prhs+nrhs);
     
     // Option processing
-    int method=CV_CONTOURS_MATCH_I1;
+    int method=1; // CV_CONTOURS_MATCH_I1;
     double parameter=0;
     for (int i=2; i<nrhs; i+=2) {
         string key = rhs[i].toString();
         if (key=="Method") {
             string val(rhs[i+1].toString());
             if (val=="I1")
-                method = CV_CONTOURS_MATCH_I1;
+                method = 1; // CV_CONTOURS_MATCH_I1;
             else if (val=="I2")
-                method = CV_CONTOURS_MATCH_I2;
+                method = 2; // CV_CONTOURS_MATCH_I2;
             else if (val=="I3")
-                method = CV_CONTOURS_MATCH_I3;
+                method = 3; // CV_CONTOURS_MATCH_I3;
             else
                 mexErrMsgIdAndTxt("mexopencv:error","Unrecognized method");
         }
