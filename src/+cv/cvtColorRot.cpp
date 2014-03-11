@@ -27,12 +27,26 @@ void mexFunction( int nlhs, mxArray *plhs[],
     
     // Option processing
     Mat src(rhs[0].toMat()), dst;
-    double Theta = rhs[1].toDouble();
-    std::vector<double> g = rhs[2].toVector<double>(); 
-    std::vector<double> c = rhs[3].toVector<double>();
+    const double Theta = rhs[1].toDouble();
+    std::vector<double> vg = rhs[2].toVector<double>(); 
+    std::vector<double> vc = rhs[3].toVector<double>();
+  //  double g[] = {vg[0],vg[1],vg[2]};
+  //  double c[] = {vc[0],vc[1],vc[2]};
     
+    
+    Vec<double, 3> c(0.5, 125.0/255.0, 107.0/255.0);
+    // cv::Vec<typename cv::depthConverter<CV_8UC4, CV_8UC3>::srcType, 3> c(180, 50, 128);
+    Vec<double, 3> g(1, 18, 2.8);
+    RGB2Rot<CV_8UC4,CV_8UC3> colSpace(2, 2, -0.1537, g, c);
+
     // Process
-    RGB2Rot<CV_8UC4,CV_8UC3> colSpace = RGB2Rot<CV_8UC4,CV_8UC3>(2, 2, Theta, g, c);
-    convertColor<CV_8UC4,CV_8UC3>(src, dst, colSpace);
+   // double t = erf(Theta);
+    
+ // "void cv::convertColor<50, 34>(cv::_InputArray const&, cv::_OutputArray const&, cv::colorSpaceConverter<50, 34>&)"
+ // "cv::RGB2Rot<50, 34>::RGB2Rot(int, int, double, std::__1::vector<double, std::__1::allocator<double> >, std::__1::vector<double, std::__1::allocator<double> >)"
+
+  //  RGB2Rot<CV_8UC3,CV_8UC3> colSpace();
+  //  RGB2Rot<CV_8UC3,CV_8UC3> colSpace(2, 2, 0.125, g, c);
+  //  convertColor<CV_8UC3,CV_8UC3>(src, dst, colSpace);
     plhs[0] = MxArray(dst);
 }
