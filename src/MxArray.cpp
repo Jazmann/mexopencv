@@ -38,7 +38,7 @@ const ConstMap<mxClassID, int> DepthOf = ConstMap<mxClassID, int>
     (mxINT16_CLASS,    CV_16S)
     (mxUINT16_CLASS,   CV_16U)
     (mxINT32_CLASS,    CV_32S)
-    (mxUINT32_CLASS,   CV_32S)
+    (mxUINT32_CLASS,   CV_32U)
     (mxLOGICAL_CLASS,  CV_8U);
 
 /** Translates data type definition used in Matlab to that of OpenCV.
